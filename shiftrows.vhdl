@@ -10,36 +10,40 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all; -- to unsigned and to integer
 
 library work;
-use work.constants.all;
+use work.constants.all; 
 
 entity shiftrows is
-    port(state  : in    MATRIX;
-         result : out   MATRIX
+    port(state_in  : in    STATE;
+         state_out : out   STATE
      );
 end entity shiftrows;
 
 architecture shiftrows_logic of shiftrows is
 begin
 
-    result(0) <= state(0);
-    result(1) <= state(5);
-    result(2) <= state(10);
-    result(3) <= state(15);
+    -- first column
+    state_out(0) <= state_in(0);
+    state_out(1) <= state_in(5);
+    state_out(2) <= state_in(10);
+    state_out(3) <= state_in(15);
 
-    result(4) <= state(4);
-    result(5) <= state(9);
-    result(6) <= state(14);
-    result(7) <= state(3);
+    -- second column
+    state_out(4) <= state_in(4);
+    state_out(5) <= state_in(9);
+    state_out(6) <= state_in(14);
+    state_out(7) <= state_in(3);
 
-    result(8) <= state(8);
-    result(9) <= state(13);
-    result(10) <= state(2);
-    result(11) <= state(7);
+    -- third column
+    state_out(8) <= state_in(8);
+    state_out(9) <= state_in(13);
+    state_out(10) <= state_in(2);
+    state_out(11) <= state_in(7);
 
-    result(12) <= state(12);
-    result(13) <= state(1);
-    result(14) <= state(6);
-    result(15) <= state(11);
+    -- fourth column
+    state_out(12) <= state_in(12);
+    state_out(13) <= state_in(1);
+    state_out(14) <= state_in(6);
+    state_out(15) <= state_in(11);
 
 
 end architecture shiftrows_logic;
