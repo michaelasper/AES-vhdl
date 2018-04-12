@@ -14,8 +14,9 @@ package constants is
     -------------------
     -- HELPFUL TYPES
     -------------------
-    subtype BYTE is unsigned(7 downto 0);
+    subtype BYTE is STD_LOGIC_VECTOR(7 downto 0);
     type STATE is array (0 to 16) of BYTE;
+    alias KEY is STATE;
     type EXP_KEY is array (0 to 10) of STD_LOGIC_VECTOR(127 downto 0);
 
 
