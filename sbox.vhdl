@@ -7,12 +7,13 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.all; -- to unsigned and to integer
 
 library work;
 use work.constants.all;
 
 entity subByte is
-    port( a :   in  BTYE;
+    port( a :   in  BYTE;
           b :   out BYTE
       );
 end entity subByte;
